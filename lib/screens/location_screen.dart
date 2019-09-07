@@ -74,3 +74,7 @@ class _LocationScreenState extends State<LocationScreen> {
     );
   }
 }
+
+//double temp = response['main']['temp'];
+//int condition = response['weather'][0]['id'];
+//String tem = response['name'];
