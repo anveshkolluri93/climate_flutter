@@ -30,6 +30,13 @@ class _LocationScreenState extends State<LocationScreen> {
   void updateUI(dynamic weatherData) {
     //weatherData is of dynam ic type from the place it originated
     setState(() {
+      if (weatherData == null) {
+        temperature = 0;
+        cityName = '';
+        weatherIcon = 'Error';
+        message = 'Unable to fetch weather info';
+        return;
+      }
       double temp = weatherData['main']['temp'];
       temperature = temp.toInt();
       int condition = weatherData['weather'][0]['id'];
